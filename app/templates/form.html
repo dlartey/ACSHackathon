@@ -44,27 +44,51 @@
         {% endif %}
       </p>
       <p>
-        Password <br>
-        {{ form.password1(class="form-control form-control-lg") }}
-        {% if form.password1.errors %}
-          {% for error in form.password1.errors %}
+        CO2 Emmisions<br>
+        {{ form.emissions(class="form-control form-control-lg") }}
+        {% if form.emissions.errors %}
+          {% for error in form.emissions.errors %}
             <span>{{ error }}</span>
           {% endfor %}
         {% endif %}
       </p>
       <p>
-        Re-enter Password <br>
-        {{ form.password2(class="form-control form-control-lg") }}
-        {% if form.password2.errors %}
-          {% for error in form.password2.errors %}
-            <span> Passwords have to be the same </span>
+        Fuel Consumption <br>
+        {{ form.fuel_consumption(class="form-control form-control-lg") }}
+        {% if form.fuel_consumption.errors %}
+          {% for error in form.fuel_consumption.errors %}
+            <span>{{ error }}</span>
           {% endfor %}
         {% endif %}
       </p>
       <p>
-        Choose a User Type <br>
-        {{ form.user_type(class="form-control form-control-md form-select") }}
+        Work Outsourced <br>
+        {{ form.work_outsourced(class="form-control form-control-lg") }}
+        {% if form.work_outsourced.errors %}
+          {% for error in form.work_outsourced.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        {% endif %}
       </p>
+      <p>
+        Work Outsourced <br>
+        {{ form.work_outsourced(class="form-control form-control-lg") }}
+        {% if form.work_outsourced.errors %}
+          {% for error in form.work_outsourced.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>
+        Upload Documents <br>
+        {{ form.upload(class="form-control form-control-lg") }}
+        {% if form.upload.errors %}
+          {% for error in form.upload.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      </p>
+
       <p><input type="submit" class="btn btn-success btn-block col-12 login-button" value="Register"></p>
    
   </form>
