@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+  <br>
+  <h1>Sign Up</h1>
+  <form method="post" name="registerform">
+      {{ form.hidden_tag() }}
+      <p>
+        Name <br>
+       {{ form.name(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.name.errors %}
+        
+              {% for error in form.name.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>
+      <p>
+        Email <br>
+        {{ form.email(class="form-control form-control-lg") }}
+        {% if form.email.errors %}
+          {% for error in form.email.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>
+        Password <br>
+        {{ form.password1(class="form-control form-control-lg") }}
+        {% if form.password1.errors %}
+          {% for error in form.password1.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>
+        Re-enter Password <br>
+        {{ form.password2(class="form-control form-control-lg") }}
+        {% if form.password2.errors %}
+          {% for error in form.password2.errors %}
+            <span> Passwords have to be the same </span>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>
+        Choose a User Type <br>
+        {{ form.user_type(class="form-control form-control-md form-select") }}
+      </p>
+      <p><input type="submit" class="btn btn-success btn-block col-12 login-button" value="Register"></p>
+   
+  </form>
+  <p>Already have an account? <a href="/login">Log in</a></p>
+
+{% endblock %}
