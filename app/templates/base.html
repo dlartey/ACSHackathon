@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  {% if title %}
+      <title>{{ title }}</title>
+      {% else %}
+      <title> No title specified</title>
+      {% endif %}
+  </head>
+  <link rel="stylesheet" href="styling/styles.css">
+  <body>
+    <div>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
