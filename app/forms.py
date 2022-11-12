@@ -22,7 +22,16 @@ import calendar
 class RegisterForm(FlaskForm):
     name = StringField('name', validators=[InputRequired(), Regexp(
         "^([^0-9]*)$", message="Name cannot contain digits")])
-    #username = StringField('username', validators=[InputRequired(), Length(min=2, max=20)])
+    industry = StringField('industry', validators=[
+                           InputRequired(), Length(min=2, max=20)])
+    country = SelectField('country', choices=[
+                          'Select One', 'Nigeria', 'Nepal'])
+    time_of_operation = SelectField('time_of_oiperation', choices=[])
+    co2_emissions = SelectField('time_of_oiperation', choices=[])
+    fuel_consumption = StringField('industry', validators=[
+        InputRequired(), Length(min=2, max=20)])
+    work_outsourced = StringField('industry', validators=[
+        InputRequired(), Length(min=2, max=20)])
     email = StringField('email', validators=[InputRequired()])
     password1 = PasswordField('password1', validators=[InputRequired()])
     password2 = PasswordField('password2', validators=[EqualTo(

@@ -5,7 +5,7 @@
   <form method="post" name="registerform">
       {{ form.hidden_tag() }}
       <p>
-        Name <br>
+        Company Name <br>
        {{ form.name(class="form-control form-control-lg margin-top-lg") }}
         {% if form.name.errors %}
         
@@ -15,10 +15,30 @@
           {% endif %}
       </p>
       <p>
-        Email <br>
-        {{ form.email(class="form-control form-control-lg") }}
-        {% if form.email.errors %}
-          {% for error in form.email.errors %}
+        Industry <br>
+       {{ form.industry(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.industry.errors %}
+        
+              {% for error in form.industry.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>
+      <p>
+        Country <br>
+       {{ form.country(class="form-control form-control-lg margin-top-lg form-select") }}
+        {% if form.country.errors %}
+        
+              {% for error in form.country.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>
+      <p>
+        Time of Operation <br>
+        {{ form.time_of_operation(class="form-control form-control-lg") }}
+        {% if form.time_of_operation.errors %}
+          {% for error in form.time_of_operation.errors %}
             <span>{{ error }}</span>
           {% endfor %}
         {% endif %}
