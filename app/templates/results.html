@@ -6,16 +6,12 @@
         <h1 class="score">{{catergory}}</h1>
     </div>
 </div>
-<div>
-    <p>We have detected that you could use a bit more help in these categories to reach your ZenZone target<br> 
-        Our recommendation for you is to view these links </p>
-    <p>We have found a link  </p>
-
-<form>
-    <input class="website-link" type="button" onclick="window.location.href='{{links}}';" value="Link" />
-</form>
-<p>test</p> 
-
+<div class="info-section">
+    <p>We have detected that you could use a bit more help in <b> <em>{{catergory}}</em></b>  to reach your ZenZone target<br> 
+        To help you with with, here are a resource we think you might find useful.</p>
+    <form>
+        <input class="website-link" type="button" onclick="window.location.href='{{links}}';" value="Link to Resource" />
+    </form>
 </div>
 
 {% endblock %}
