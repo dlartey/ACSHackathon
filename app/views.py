@@ -26,3 +26,10 @@ def form():
     return render_template('form.html',
                            title='Form page',
                            form=form)
+
+
+@app.route('/about')
+def about():
+    user = {'name': 'Sam Wilson'}
+    return render_template('about.html'
+                           )
