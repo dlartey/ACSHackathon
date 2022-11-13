@@ -24,6 +24,7 @@ def form():
     form = RegisterForm()
     if request.method == 'POST':
         try:
+            session['name'] = request.form['name']
             return redirect(url_for('results'))  # redirect to login page
         except Exception as e:
             app.logger.error(e)
@@ -83,6 +84,7 @@ areas = {
 l = ['Self Care','Emotions','Personal Relationships','Social Media']
 @app.route('/results')
 def results():
+    name = session.get('name')
     score=session.get('score')
     catergory = l[random.randint(0,3)]
     links = "";
@@ -98,4 +100,5 @@ def results():
     return render_template('results.html',catergory=catergory,
                            score=score,
                            links=links,
+                           name=name,
                            suggestion=suggestion)
