@@ -27,6 +27,9 @@ def form():
                            title='Form page',
                            form=form)
 
+responses = {"good":"a good fit for this initiative. Your company clearly aligns with our mission to provide positive growth to LEDCs",
+"bad": " ",
+"ok": " ",}
 
 @app.route('/about')
 def about():
