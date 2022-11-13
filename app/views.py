@@ -37,7 +37,7 @@ def about():
 @app.route('/results')
 def results():
     suggestion = "N/A"
-    return render_template('results.html'
+    return render_template('results.html',
                            score=score,
                            suggestion=suggestion)
 
