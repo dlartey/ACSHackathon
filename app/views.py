@@ -3,6 +3,7 @@ from app import app
 from .forms import RegisterForm
 import random
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -31,7 +32,7 @@ def form():
             flash(e, 'alert alert-danger')
 
     # save results into session
-    session['score'] = random.randint(70,100)
+    session['score'] = random.randint(70, 100)
     return render_template('form.html',
                            title='Form page',
                            form=form)
@@ -81,24 +82,34 @@ areas = {
     'Emotions': emotion
 }
 
-l = ['Self Care','Emotions','Personal Relationships','Social Media']
+background_image = ['/static/images/results.jpg',
+                    '/static/images/results2.jpg',
+                    '/static/images/results3.jpg',
+                    '/static/images/results4.jpg']
+
+
+l = ['Self Care', 'Emotions', 'Personal Relationships', 'Social Media']
+
+
 @app.route('/results')
 def results():
     name = session.get('name')
-    score=session.get('score')
-    catergory = l[random.randint(0,3)]
-    links = "";
+    score = session.get('score')
+    catergory = l[random.randint(0, 3)]
+    links = ""
     if (catergory == 'Self Care'):
-        links = self_care[random.randint(0,3)]
+        links = self_care[random.randint(0, 3)]
     elif catergory == 'Emotions':
-        links = emotion[random.randint(0,3)]
+        links = emotion[random.randint(0, 3)]
     elif catergory == 'Social Media':
-        links = social[random.randint(0,3)]
+        links = social[random.randint(0, 3)]
     else:
-        links=pr[random.randint(0,3)]
+        links = pr[random.randint(0, 3)]
     suggestion = "N/A"
-    return render_template('results.html',catergory=catergory,
+    background_image = 'url(/static/images/results4.jpg'
+    return render_template('results.html', catergory=catergory,
                            score=score,
                            links=links,
                            name=name,
-                           suggestion=suggestion)
+                           suggestion=suggestion,
+                           background_image=background_image)
