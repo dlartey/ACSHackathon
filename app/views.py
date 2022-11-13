@@ -29,15 +29,20 @@ def form():
                            title='Form page',
                            form=form)
 
+responses = {"good":"a good fit for this initiative. Your company clearly aligns with our mission to provide positive growth to LEDCs",
+"bad": " ",
+"ok": " ",}
 
 @app.route('/about')
 def about():
     user = {'name': 'Sam Wilson'}
-    return render_template('about.html')
-
+    return render_template('about.html'
+                           )
 
 @app.route('/results')
 def results():
-    score = session.get('score')
+    suggestion = "N/A"
     return render_template('results.html',
-                           score=score)
+                           score=score,
+                           suggestion=suggestion)
+
