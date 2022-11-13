@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="score-container">
-    <h3>Your Score is</h3>
+    <h3>Your ZenZone target is</h3>
     <div class="score-border">
-        <h1 class="score">{{score}}</h1>
+        <h1 class="score">{{catergory}}</h1>
     </div>
+    <p>{{category}}</p>
 </div>
-<p>This score highlights that you would be {{response}} </p>
-<p>Our recommendation for you is to: {{suggestion}}</p>
+<p>Our recommendation for you is to view these links to reach your ZenZone target</p>
+<p>Here is a button to take you to a </p>
+
+<form>
+    <input type="button" onclick="window.location.href='{{links}}';" value="w3docs" />
+  </form>
+<p>test</p>
 
 
 <p>If we find a good fit, we will be in contact</p>

@@ -1,7 +1,7 @@
 from flask import request, render_template, flash, redirect, url_for, session
 from app import app
 from .forms import RegisterForm
-
+import random
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -30,7 +30,7 @@ def form():
             flash(e, 'alert alert-danger')
 
     # save results into session
-    session['score'] = 100
+    session['score'] = random.randint(70,100)
     return render_template('form.html',
                            title='Form page',
                            form=form)
@@ -80,11 +80,22 @@ areas = {
     'Emotions': emotion
 }
 
-
+l = ['Self Care','Emotions','Personal Relationships','Social Media']
 @app.route('/results')
 def results():
-    score = session.get('score')
+    score=session.get('score')
+    catergory = l[random.randint(0,3)]
+    links = "";
+    if (catergory == 'Self Care'):
+        links = self_care[random.randint(0,3)]
+    elif catergory == 'Emotions':
+        links = emotion[random.randint(0,3)]
+    elif catergory == 'Social Media':
+        links = social[random.randint(0,3)]
+    else:
+        links=pr[random.randint(0,3)]
     suggestion = "N/A"
-    return render_template('results.html',
+    return render_template('results.html',catergory=catergory,
                            score=score,
+                           links=links,
                            suggestion=suggestion)
