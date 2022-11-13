@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
   <br>
-  <h1>Sign Up</h1>
+  <h1>ESG Compatibility Questionnaire</h1>
   <form method="post" name="registerform">
       {{ form.hidden_tag() }}
       <p>
@@ -25,7 +25,7 @@
           {% endif %}
       </p>
       <p>
-        Country <br>
+        Where are you based? <br>
        {{ form.country(class="form-control form-control-lg margin-top-lg form-select") }}
         {% if form.country.errors %}
         
@@ -35,7 +35,7 @@
           {% endif %}
       </p>
       <p>
-        Time of Operation <br>
+        How long have you been operating? <br>
         {{ form.time_of_operation(class="form-control form-control-lg") }}
         {% if form.time_of_operation.errors %}
           {% for error in form.time_of_operation.errors %}
@@ -44,16 +44,52 @@
         {% endif %}
       </p>
       <p>
-        CO2 Emmisions<br>
-        {{ form.emissions(class="form-control form-control-lg") }}
-        {% if form.emissions.errors %}
-          {% for error in form.emissions.errors %}
+        What was your last year's gross income? <br>
+        {{ form.gross_income(class="form-control form-control-lg") }}
+        {% if form.gross_income.errors %}
+          {% for error in form.gross_income.errors %}
             <span>{{ error }}</span>
           {% endfor %}
         {% endif %}
       </p>
       <p>
-        Fuel Consumption <br>
+        What was your last year's net profit? <br>
+        {{ form.net_profit(class="form-control form-control-lg") }}
+        {% if form.net_profit.errors %}
+          {% for error in form.net_profit.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>
+        What were your electricity emissions for the last 12 months? (kWh)<br>
+        {{ form.elec_emissions(class="form-control form-control-lg") }}
+        {% if form.elec_emissions.errors %}
+          {% for error in form.elec_emissions.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>
+        What were your natural gas emissions for the last 12 months? (m^3)<br>
+        {{ form.gas_emissions(class="form-control form-control-lg") }}
+        {% if form.gas_emissions.errors %}
+          {% for error in form.gas_emissions.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>
+        What were your CO2 Emissions for the last 12 months? (equiv. metric tons)<br>
+        {{ form.co2_emissions(class="form-control form-control-lg") }}
+        {% if form.co2_emissions.errors %}
+          {% for error in form.co2_emissions.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>
+        How many litres of fuel did you consume in the last 12 months? <br>
         {{ form.fuel_consumption(class="form-control form-control-lg") }}
         {% if form.fuel_consumption.errors %}
           {% for error in form.fuel_consumption.errors %}
@@ -62,7 +98,7 @@
         {% endif %}
       </p>
       <p>
-        Work Outsourced <br>
+        Do you outsource your work? <br>
         {{ form.work_outsourced(class="form-control form-control-lg") }}
         {% if form.work_outsourced.errors %}
           {% for error in form.work_outsourced.errors %}
@@ -71,10 +107,10 @@
         {% endif %}
       </p>
       <p>
-        Work Outsourced <br>
-        {{ form.work_outsourced(class="form-control form-control-lg") }}
-        {% if form.work_outsourced.errors %}
-          {% for error in form.work_outsourced.errors %}
+        If you answered yes, how far do you outsource your work? Otherwise, answer N/A <br>
+        {{ form.work_outsourced_dist(class="form-control form-control-lg") }}
+        {% if form.work_outsourced_dist.errors %}
+          {% for error in form.work_outsourced_dist.errors %}
             <span>{{ error }}</span>
           {% endfor %}
         {% endif %}
