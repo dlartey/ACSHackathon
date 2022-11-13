@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
-
 {% block content %}
 <h1>Here are the results from your questionnaire</h1>
 
 <p> {{score}}</p>
+<p>This score highlights that you would be {{response}} </p>
 <p>Our recommendation for you is to: {{suggesstion}}</p>
+
 
 <p>If we find a good fit, we will be in contact</p>
 {% endblock %}
