@@ -33,3 +33,11 @@ def about():
     user = {'name': 'Sam Wilson'}
     return render_template('about.html'
                            )
+
+@app.route('/results')
+def results():
+    suggestion = "N/A"
+    return render_template('results.html'
+                           score=score,
+                           suggestion=suggestion)
+
