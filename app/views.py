@@ -42,6 +42,38 @@ def about():
                            )
 
 
+self_care = ['https://www.thespruce.com/how-to-create-a-daily-routine-2648007',
+'https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eight-tips-for-healthy-eating/',
+'https://www.counselling-directory.org.uk/memberarticles/knowing-your-limits-what-are-boundaries-and-why-are-they-important',
+'https://www.newhealthadvisor.org/how-to-stop-using-your-phone-so-much.html']
+
+
+pr = ['https://www.howtomakefriends.co.uk/',
+'https://selfcarefundamentals.com/how-to-improve-relationships-with-your-parents/',
+'https://professional.dce.harvard.edu/blog/eight-things-you-can-do-to-improve-your-communication-skills/',
+'https://www.healthline.com/health/mental-health/how-to-control-anger'
+]
+
+emotion = ['https://www.healthline.com/health/how-to-control-your-emotions',
+'https://www.nhs.uk/mental-health/self-help/tips-and-support/cope-with-depression/',
+'https://www.healthline.com/health/how-to-stop-being-lazy',
+'https://www.nhs.uk/mental-health/self-help/tips-and-support/how-to-be-happier/']
+
+
+social=[
+'https://myh.org.uk/how-to-reduce-social-media-usage/',
+'https://erickimphotography.com/blog/2017/03/05/how-to-be-less-addicted-to-social-media/',
+'https://www.headspace.com/mindfulness/negative-effects-of-social-media',
+'https://www.healthline.com/health/mental-health/how-to-cope-with-anxiety'
+]
+
+areas = {
+    'Social Media':social,
+    'Self Care':self_care,
+    'Personal Relationships':pr,
+    'Emotions':emotion
+}
+
 @app.route('/results')
 def results():
     score = session.get('score')
