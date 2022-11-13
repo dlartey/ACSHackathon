@@ -23,16 +23,38 @@ import calendar
 
 class RegisterForm(FlaskForm):
     name = StringField('name', validators=[InputRequired(), Regexp("^([^0-9]*)$", message="Name cannot contain digits")])
-    industry = SelectField('industry', choices=['Select one','Agriculture', 'Economics & Finance', 'Education', 'Entertainment', 'Healthcare', 'Marketing','Technology'])
-    country = SelectField('country', choices=['Select one', 'Central African Republic', 'Haiti','Myanmar','Nigeria', 'Nepal', 'Senegal','Somalia', 'Tuvalu'])
-    time_of_operation = SelectField('time_of_operation', choices=['Select one', 'Less than 12 months', '1-3 years', '4-9 years', 'Over ten years'])
-    gross_income = FloatField('gross_income', validators=[InputRequired()])
-    net_profit = FloatField('net_profit', validators=[InputRequired()])
-    elec_emissions = FloatField('elec_emissions', validators=[InputRequired()])
-    gas_emissions = FloatField('gas_emissions', validators=[InputRequired()])
-    co2_emissions = FloatField('gas_emissions', validators=[InputRequired()])
-    fuel_consumption = FloatField('fuel_consumption', validators=[InputRequired(), Length(min=2, max=20)])
-    energy_consumption = FloatField('energy_consumption', validators=[InputRequired(), Length(min=2, max=20)])
-    work_outsourced = SelectField('work_outsourced', choices=['Select one','Yes', 'No'])
-    work_outsourced_dist = SelectField('work_outsourced_dist', choices=['Select one', 'N/A', 'Within my country of operation', 'Within my continent of operation', 'Out of the continent'])
-    upload = FileField('upload')
+    age = SelectField('age', choices=['Under 18', '18-25', '26-36', '36-49','50+'])
+    
+    screentime_a = SelectField('screentime_a', choices=['Less than 3 hours', '3-5 hours', '6-15 hours', 'Over 16 hours'])
+    influencer_a = SelectField('influencer_a', choices=['Yes - all the time', 'Yes - sometimes', 'No, never']) # have you compared yourself to another user on social media
+    filters_a = SelectField('filters_a', choices=['Yes - all the time', 'Yes - occasionally', 'Never'])
+    self_image_a = SelectField('self_image_a', choices=['Yes, I love how I look', 'Yes, but I am ocassionally self conscious', 'No, I hate it']) # like how i look
+    messages_a = SelectField('messages_a', choices=['Yes', 'No']) # do you have a lot of unread messages 
+    bedtime_a = SelectField('bedtime_a', choices=['Yes, all the time', 'Yes - sometimes', 'Never']) # use phone before bed often
+    following_a = SelectField('following_a', choices=['Family/friends', 'Celebrities','Beauty influencers', 'Fitness influencers', 'Pets/Animals']) # who do you mostly follow online
+    recommendation_a = SelectField('recommendation_a', choices=['Yes, significantly', 'Yes - occassionally', 'Never']) # does social media influence your product choices
+
+    outside_b = SelectField('outside_b', choices=['Yes','No']) # gone outside
+    eaten_b = SelectField('eaten_b', choices=['Yes - all the time', 'Yes - occasionally', 'No']) # have you eaten today 
+    nonline_b = SelectField('nonline_b', choices=['Yes - all the time', 'Yes - occasionally', 'No']) # nonline recreational activity
+    exercise_b = SelectField('exercise_b', choices=['Yes - all the time', 'Yes - occasionally', 'No']) # exercised per week 
+    sleep_b = SelectField('sleep_b', choices=['Less than 3 hours', '3-6 hours', '7+ hours'])
+    
+    relationship_c = SelectField('relationship_b', choices=['Yes - all the time', 'Yes - occasionally', 'No']) # spoken to a friend or loved one recently
+    confide_c = SelectField('confide_c', choices=['Yes - all the time', 'Yes - occasionally', 'No']) # have confidant
+    judged_c = SelectField('judged_c', choices=['Yes - all the time', 'Yes - occasionally', 'Never']) # feel judged by those around you
+
+
+    stress_d = SelectField('stress_d', choices=['Yes - all the time', 'Yes - occasionally', 'Never']) # get stressed easy?
+    concentrate_d = SelectField('concentrate_d', choices=['Yes - all the time', 'Yes - occasionally', 'No']) # good at concentrating
+    depress_d = SelectField('depress_d', choices=['Yes - all the time', 'Yes - occasionally', 'Never'])
+
+
+
+    
+
+
+
+
+
+    
