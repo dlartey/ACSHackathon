@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="score-container">
-    <h3>Hello, {{name}}! Your ZenZone target is</h3>
-    <div class="score-border">
-        <h1 class="score">{{catergory}}</h1>
+<div class="results-background" style="background-image: url(/static/images/results2.jpg); height: 800px;">
+    <div class="score-container">
+        <h3 class="intro"> Hello, {{name}}! Your ZenZone target is:</h3>
+        <div class="score-border">
+            <h1 class="score">{{catergory}}</h1>
+        </div>
     </div>
-</div>
-<div class="info-section">
-    <p>We have detected that you could use a bit more help in <b> <em>{{catergory}}</em></b>  to reach your ZenZone target<br> 
-        To help you with with, here are a resource we think you might find useful.</p>
-    <form>
-        <input class="website-link" type="button" onclick="window.location.href='{{links}}';" value="Link to Resource" />
-    </form>
+    <div class="info-section">
+        <p class="results-info">We have detected that you could use a bit more help in <b> <em>{{catergory}}</em></b>  to reach your ZenZone target<br> 
+            To help you with with, here are a resource we think you might find useful.</p>
+        <form>
+            <input class="website-link" type="button" onclick="window.location.href='{{links}}';" value="Link to Resource" />
+        </form>
+    </div>
 </div>
 
 {% endblock %}
