@@ -17,7 +17,7 @@ def index():
             flash("Try again! An error occured")
 
     return render_template('index.html',
-                           title='Simple template example')
+                           title='ZenZone | HomePage')
 
 
 @app.route('/form', methods=['GET', 'POST'])
@@ -34,7 +34,7 @@ def form():
     # save results into session
     session['score'] = random.randint(70, 100)
     return render_template('form.html',
-                           title='Form page',
+                           title='ZenZone | Form page',
                            form=form)
 
 
@@ -46,7 +46,8 @@ responses = {"good": "a good fit for this initiative. Your company clearly align
 @app.route('/about')
 def about():
     user = {'name': 'Sam Wilson'}
-    return render_template('about.html'
+    return render_template('about.html',
+                           title='ZenZone | About Page'
                            )
 
 
@@ -112,4 +113,5 @@ def results():
                            links=links,
                            name=name,
                            suggestion=suggestion,
-                           background_image=background_image)
+                           background_image=background_image,
+                           title="ZenZone | Results Page")
