@@ -27,7 +27,7 @@ class RegisterForm(FlaskForm):
                            InputRequired(), Length(min=2, max=20)])
     country = SelectField('country', choices=[
                           'Select One', 'Nigeria', 'Nepal'])
-    time_of_operation = SelectField('time_of_oiperation', choices=[])
+    time_of_operation = SelectField('time_of_operation', choices=[])
     emissions = SelectField('time_of_oiperation', choices=[])
     fuel_consumption = StringField('industry', validators=[
         InputRequired(), Length(min=2, max=20)])
