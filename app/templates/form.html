@@ -2,6 +2,7 @@
 {% block content %}
   <br>
   <h1>Sign Up</h1>
+  <div>
   <form method="post" name="registerform">
       {{ form.hidden_tag() }}
       <p>
@@ -92,6 +93,6 @@
       <p><input type="submit" class="btn btn-success btn-block col-12 login-button" value="Register"></p>
    
   </form>
-  <p>Already have an account? <a href="/login">Log in</a></p>
+</div>
 
 {% endblock %}

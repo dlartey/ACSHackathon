@@ -1,4 +1,4 @@
-from flask import request, render_template, flash, redirect, url_for
+from flask import request, render_template, flash, redirect, url_for, session
 from app import app
 from .forms import RegisterForm
 
@@ -23,6 +23,8 @@ def index():
 def form():
     user = {'name': 'Sam Wilson'}
     form = RegisterForm()
+    # save results into session
+    session['score'] = 100
     return render_template('form.html',
                            title='Form page',
                            form=form)
@@ -31,5 +33,11 @@ def form():
 @app.route('/about')
 def about():
     user = {'name': 'Sam Wilson'}
-    return render_template('about.html'
-                           )
+    return render_template('about.html')
+
+
+@app.route('/results')
+def results():
+    score = session.get('score')
+    return render_template('results.html',
+                           score=score)

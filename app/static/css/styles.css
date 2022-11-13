@@ -5,6 +5,38 @@
 /* css sttyles for main-containe */
 /**/
 
+
+/* RESULTS STYLING */
+.score-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+.score-border{
+    display: flex;
+    height: 300px;
+    width: 300px;
+    
+    border: 3px solid red;
+    border-radius: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.score {
+    font-size: 150px;
+}
+
+.recommendations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .Main_container{
     background-image: url(/static/images/pexels-creative-vix-9754.jpg);
     /* background-image: ;
@@ -156,3 +188,10 @@
     height: 20px;
     /* color: white; */
 }
+
+
+/* FORM STYLING */
+
+
+
+
