@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
     /* border: 1px solid red; */
+    margin-bottom: 20px;
 }
 
 .score-border{
@@ -20,24 +21,43 @@
     height: 380px;
     width: 380px;
     
-    border: 3px solid red;
+    /* border: 3px solid red; */
     border-radius: 200px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(247, 177, 45);
+    background-color: crimson;
 }
 
 .score {
     font-size: 60px;
+    color: white;
+}
+
+.intro{
+    color: white;
+    margin-top: 20px;
 }
 
 .website-link{
-    width: 160px;
-    height: 40px;
-    border: 1px solid gray;
-    border-radius: 20px;
-    background-color: rgb(183, 183, 183);
+    width: 200px;
+    height: 60px;
+    border: 1px solid crimson;
+    border-radius: 30px;
+    background-color: white;
+    color: crimson;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.website-link:hover{
+    background-color: crimson;
+    color: white;
+}
+
+.results-info{
+    color: white;
+    font-size: 20px;
 
 }
 
@@ -47,6 +67,8 @@
     align-items: center;
     text-align: center;
 }
+
+
 
 
 /* *************************************************** */
