@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
   <br>
-  <h1>ESG Compatibility Questionnaire</h1>
+  <h1>ZenZone Online Wellness Check</h1>
   <form method="post" name="registerform">
       {{ form.hidden_tag() }}
       <p>
-        Company Name <br>
+        Name <br>
        {{ form.name(class="form-control form-control-lg margin-top-lg") }}
         {% if form.name.errors %}
         
@@ -15,116 +15,205 @@
           {% endif %}
       </p>
       <p>
-        Industry <br>
-       {{ form.industry(class="form-control form-control-lg margin-top-lg") }}
-        {% if form.industry.errors %}
+        age <br>
+       {{ form.age(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.age.errors %}
         
-              {% for error in form.industry.errors %}
+              {% for error in form.age.errors %}
                   <span>{{ error }}</span>
               {% endfor %}
           {% endif %}
       </p>
       <p>
-        Where are you based? <br>
-       {{ form.country(class="form-control form-control-lg margin-top-lg form-select") }}
-        {% if form.country.errors %}
+        How much screen time have you had (on average) over the last 3 days? <br>
+       {{ form.screentime_a(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.screentime_a.errors %}
         
-              {% for error in form.country.errors %}
+              {% for error in form.screentime_a.errors %}
                   <span>{{ error }}</span>
               {% endfor %}
           {% endif %}
       </p>
       <p>
-        How long have you been operating? <br>
-        {{ form.time_of_operation(class="form-control form-control-lg") }}
-        {% if form.time_of_operation.errors %}
-          {% for error in form.time_of_operation.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        {% endif %}
+        Have you compared yourself to another social media user recently? <br>
+       {{ form.influencer_a(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.influencer_a.errors %}
+        
+              {% for error in form.influencer_a.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
       </p>
       <p>
-        What was your last year's gross income? <br>
-        {{ form.gross_income(class="form-control form-control-lg") }}
-        {% if form.gross_income.errors %}
-          {% for error in form.gross_income.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        {% endif %}
+        Do you often use face/body image filters? <br>
+       {{ form.filters_a(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.filters_a.errors %}
+        
+              {% for error in form.filters_a.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>]
+      <p>
+        Do you like how you look? <br>
+       {{ form.self_image_a(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.self_image_a.errors %}
+        
+              {% for error in form.self_image_a.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
       </p>
       <p>
-        What was your last year's net profit? <br>
-        {{ form.net_profit(class="form-control form-control-lg") }}
-        {% if form.net_profit.errors %}
-          {% for error in form.net_profit.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        {% endif %}
+        Do you have a large number of unread messages? <br>
+       {{ form.messages_a(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.messages_a.errors %}
+        
+              {% for error in form.messages_a.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
       </p>
       <p>
-        What were your electricity emissions for the last 12 months? (kWh)<br>
-        {{ form.elec_emissions(class="form-control form-control-lg") }}
-        {% if form.elec_emissions.errors %}
-          {% for error in form.elec_emissions.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        {% endif %}
+        Do you often use your phone before bed? <br>
+       {{ form.bedtime_a(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.bedtime_a.errors %}
+        
+              {% for error in form.bedtime_a.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
       </p>
       <p>
-        What were your natural gas emissions for the last 12 months? (m^3)<br>
-        {{ form.gas_emissions(class="form-control form-control-lg") }}
-        {% if form.gas_emissions.errors %}
-          {% for error in form.gas_emissions.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        {% endif %}
+        Who do you mostly follow on social media? <br>
+       {{ form.following_a(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.following_a.errors %}
+        
+              {% for error in form.following_a.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
       </p>
       <p>
-        What were your CO2 Emissions for the last 12 months? (equiv. metric tons)<br>
-        {{ form.co2_emissions(class="form-control form-control-lg") }}
-        {% if form.co2_emissions.errors %}
-          {% for error in form.co2_emissions.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        {% endif %}
+        Has social media influence your product choices recently? <br>
+       {{ form.recommendation_a(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.recommendation_a.errors %}
+        
+              {% for error in form.recommendation_a.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
       </p>
       <p>
-        How many litres of fuel did you consume in the last 12 months? <br>
-        {{ form.fuel_consumption(class="form-control form-control-lg") }}
-        {% if form.fuel_consumption.errors %}
-          {% for error in form.fuel_consumption.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        {% endif %}
+        Have you gone outside today? <br>
+       {{ form.outside_b(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.outside_b.errors %}
+        
+              {% for error in form.outside_b.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
       </p>
       <p>
-        Do you outsource your work? <br>
-        {{ form.work_outsourced(class="form-control form-control-lg") }}
-        {% if form.work_outsourced.errors %}
-          {% for error in form.work_outsourced.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        {% endif %}
+        Have you been eating nutritious food lately?  <br>
+       {{ form.eaten_b(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.eaten_b.errors %}
+        
+              {% for error in form.eaten_b.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
       </p>
       <p>
-        If you answered yes, how far do you outsource your work? Otherwise, answer N/A <br>
-        {{ form.work_outsourced_dist(class="form-control form-control-lg") }}
-        {% if form.work_outsourced_dist.errors %}
-          {% for error in form.work_outsourced_dist.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        {% endif %}
+        Have you participated in any unplugged recreational activities recently ? <br>
+       {{ form.nonline_b(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.nonline_b.errors %}
+        
+              {% for error in form.nonline_b.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
       </p>
       <p>
-        Upload Documents <br>
-        {{ form.upload(class="form-control form-control-lg") }}
-        {% if form.upload.errors %}
-          {% for error in form.upload.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        {% endif %}
+        Have you exercised lots this week? <br>
+       {{ form.exercise_b(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.exercise_b.errors %}
+        
+              {% for error in form.exercise_b.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
       </p>
-
+      <p>
+        How many hours of sleep do you get per night? <br>
+       {{ form.sleep_b(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.sleep_b.errors %}
+        
+              {% for error in form.sleep_b.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>
+      <p>
+        Have you spoken to a friend or loved one recently? <br>
+       {{ form.relationship_c(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.relationship_c.errors %}
+        
+              {% for error in form.relationship_c.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>
+      <p>
+        Do you have somebody you can confide your private information? <br>
+       {{ form.confide_c(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.confide_c.errors %}
+        
+              {% for error in form.confide_c.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>
+      <p>
+        Do you ever feel judged by those around you? <br>
+       {{ form.judged_c(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.judged_c.errors %}
+        
+              {% for error in form.judged_c.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>
+      <p>
+        Do you get stressed easily? <br>
+       {{ form.stress_d(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.stress_d.errors %}
+        
+              {% for error in form.stress_d.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>
+      <p>
+        Are you good at concentrating? <br>
+       {{ form.concentrate_d(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.concentrate_d.errors %}
+        
+              {% for error in form.concentrate_d.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>
+      <p>
+        Do you often feel depressed? <br>
+       {{ form.depress_d(class="form-control form-control-lg margin-top-lg") }}
+        {% if form.depress_d.errors %}
+        
+              {% for error in form.depress_d.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          {% endif %}
+      </p>
       <p><input type="submit" class="btn btn-success btn-block col-12 login-button" value="Register"></p>
    
   </form>
